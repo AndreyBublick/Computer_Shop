@@ -1,0 +1,26 @@
+@import '../../generalScss/variables';
+
+.sidebar_with_mini_window {
+
+
+    &__body {}
+
+    &__items {
+        display        : flex;
+        gap            : 20px;
+        justify-content: space-between;
+
+        &>div {
+            border-radius   : 5px;
+            background-color: $darkBg;
+        }
+        &>div:nth-child(1) {
+            flex: 0 0 23.9%;
+        }
+        &>div:nth-child(2) {
+           
+            flex: 1 1 76.1%;
+        }
+
+    }
+}

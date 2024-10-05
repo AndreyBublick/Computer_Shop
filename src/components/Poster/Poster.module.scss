@@ -1,0 +1,148 @@
+@import '../../generalScss/mixins.scss';
+@import '../../generalScss/variables.scss';
+
+.poster {
+    overflow: visible;
+    @include adapt-value(padding-left, 30, calc(30 * 0.5), 0);
+    @include adapt-value(padding-right, 30, calc(30 * 0.5), 0);
+    @include adapt-value(padding-bottom, 30, calc(30 * 0.5), 0);
+
+    @media(max-width:450px) {
+        @include adapt-value(padding-top, 5, calc(5 * 1), 1);
+    }
+
+    position: relative;
+
+
+    &::before {
+        content: 'big sale 20%';
+
+
+        @include adapt-value(font-size, 115, calc(115 * 0.1), 1);
+
+        font-weight: 900;
+        line-height: 1.22;
+
+        color         : $grayText;
+        text-transform: uppercase;
+        opacity       : 0.4;
+
+        @media(max-width:767px) {
+            @include adapt-value(font-size, 100, calc(100 * 0.41), 1);
+        }
+
+        @media(max-width:450px) {
+            @include adapt-value(font-size, 80, calc(80 * 0.5), 1);
+        }
+
+        @media(max-width:400px) {
+            @include adapt-value(font-size, 50, calc(50 * 0.7), 1);
+        }
+
+        @media(max-width:330px) {
+            @include adapt-value(font-size, 40, calc(40 * 0.73), 1);
+        }
+    }
+
+    &::after {
+        content : '';
+        width   : 100%;
+        height  : 100%;
+        position: absolute;
+        @include adapt-value(top, 20, 10, 0);
+
+        left: 0;
+
+        @media (min-width:1051px) {
+            background: url('../../images/computer.png') 85% 100%/50% no-repeat;
+
+        }
+
+        @media (min-width:768px) and (max-width:1050px) {
+
+            background: url('../../images/computer.png') 85% 100%/60% no-repeat;
+        }
+
+
+        @media(min-width:651px) and (max-width:767px) {
+
+            background: url('../../images/computer.png') 95% 100%/41% no-repeat;
+        }
+
+        @media (max-width:650px) {
+
+            background: url('../../images/computer.png') 97% 100%/46% no-repeat;
+        }
+    }
+
+
+    align-self     : center;
+    min-height     : 100%;
+    display        : flex;
+    flex-direction : column;
+
+    &__body {
+        position          : relative;
+        z-index           : 1;
+        flex              : 1 1 auto;
+        display           : flex;
+        flex-direction    : column;
+        /* justify-content: center; */
+
+        text-transform: uppercase;
+
+
+    }
+
+    &__sub_title {
+        @include adapt-value(margin-bottom, 15, calc(15 * 0.5), 1);
+
+        color: $grayText;
+
+        @include adapt-value(font-size, 16, calc(16 * 0.5), 1);
+
+    }
+
+    &__title {
+        font-weight: 700;
+        color      : $white;
+        line-height: 1.3;
+        @include adapt-value(font-size, 42, calc(42 * 0.5), 1);
+        @include adapt-value(margin-bottom, 20, calc(20 * 0.5), 1);
+
+
+        @media(max-width:450px) {
+            @include adapt-value(font-size, 42, calc(42 * 0.4), 1);
+        }
+
+
+
+    }
+
+    &__button {
+        /* button {
+            
+            line-height: 2.2;
+            @include adapt-value(font-size, 16, calc(16 * 0.5), 0);
+            font-weight     : 700;
+            color           : $white;
+            text-transform  : capitalize;
+            background-color: $violetDark;
+            border-radius   : 0.3em;
+            @include adapt-value(padding-left, 17, calc(17 * 0.5), 0);
+            @include adapt-value(padding-right, 17, calc(17 * 0.5), 0);
+
+            @media (hover:hover) {
+                &:hover{
+                    background-color: #401781;
+                }
+            }
+            @media (hover:none) {
+                &:active{
+                    background-color: #401781;
+                }
+            }
+        } */
+    }
+
+}

@@ -1,0 +1,131 @@
+@import '../../generalScss/variables.scss';
+@import '../../generalScss/mixins.scss';
+
+.header {
+@include adapt-value(padding-top,20,15,1);
+@include adapt-value(padding-bottom,20,15,1);
+
+    /* padding: 20px 0; */
+
+
+    &__body {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+    }
+
+    &__logo {}
+
+    &__user {
+
+        display: flex;
+
+        align-items: center;
+
+        @media (max-width:767px) {
+            display: none;
+        }
+
+        img {
+            width        : 35px;
+            height       : 35px;
+            border-radius: 50%;
+            margin-right : 15px;
+        }
+    }
+
+    &__form {
+        background-color: #292929;
+        border-radius   : 7px;
+        overflow        : hidden;
+        color           : rgb(97, 93, 93);
+    }
+
+    &__search {
+        @media (max-width:767px) {
+            display: none;
+        }
+
+        padding: 7px 13px 7px 10px;
+        display: flex;
+
+        align-items: center;
+
+        .search {
+
+            height      : 100%;
+            align-items : center;
+            display     : flex;
+            margin-right: 10px;
+
+            svg {}
+        }
+
+
+        input {
+            background-color: transparent;
+            color           : white;
+            height          : 100%;
+            font-size       : 18px;
+        }
+    }
+
+}
+
+
+
+
+
+
+.icons {
+    &__items {
+        display: flex;
+
+        align-items: center;
+    }
+
+    &__item {
+        padding: 0px 5px;
+
+
+
+
+
+        i {
+            transition: color 0.15s ease-in-out;
+            position  : relative;
+            font-size : 30px;
+            color     : $white;
+            @media (hover:hover) {
+                &:hover {
+                    color           : $violetDark;
+                    
+                }
+            }
+            span{
+                color: $white;
+            }
+            
+        }
+    }
+}
+
+.circle {
+    position        : absolute;
+    top             : 100%;
+    left            : 100%;
+    transform       : translate(-75%, -100%);
+    width           : 20px;
+    height          : 20px;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    /*  font-family : Arial, "Helvetica Neue", Helvetica, sans-serif; */
+    border-radius   : 50%;
+    font-size       : 12px;
+    text-align      : center;
+    text-transform  : none;
+    font-style      : normal;
+    background-color: $violetDark;
+}

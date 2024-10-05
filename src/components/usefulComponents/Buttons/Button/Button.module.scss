@@ -1,0 +1,39 @@
+@import './../../../../generalScss/variables.scss';
+@import './../../../../generalScss/mixins.scss';
+
+.button {
+    transition: 0.10s all ease-in;
+    cursor    : pointer;
+
+
+
+    line-height: 2.4;
+    @include adapt-value(font-size, 16, calc(16 * 0.8), 0);
+    font-weight     : 600;
+    color           : $white;
+    text-transform  : capitalize;
+    background-color: $violetDark;
+    border-radius   : 0.3em;
+    @include adapt-value(padding-left, 20, calc(20 * 0.8), 0);
+    @include adapt-value(padding-right, 20, calc(20 * 0.8), 0);
+
+    @media (hover:hover) {
+        &:hover {
+            background-color: $violetActive;
+        }
+    }
+
+    @media (hover:none) {
+        &:active {
+            background-color: $violetActive;
+        }
+    }
+
+
+    &:disabled {
+        background-color: $grayText;
+        color           : #B8B8B8;
+        cursor          : not-allowed;
+    
+    }
+}

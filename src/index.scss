@@ -1,0 +1,49 @@
+@import './generalScss/nullstyle.scss';
+@import './generalScss/mixins.scss';
+@import './generalScss/variables';
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Sofia+Sans:wght@300;500;700&display=swap");
+
+
+body {
+    font-family     : 'Montserrat', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: $bg;
+    overflow-x      : hidden;
+
+}
+
+.container {
+    padding  : 0 15px;
+    max-width: $maxWidthContainer + 30px;
+    margin   : 0 auto;
+}
+main{
+    @include adapt-value(margin-bottom,19,15,1);
+}
+.wrapper {
+    display: grid;
+
+    @include adapt-value(gap, 19, 15, 1);
+    /* overflow: hidden; */
+    grid-auto-columns: 100%;
+
+}
+
+section {
+    border-radius: 6px;
+
+    background-color: $darkBg;
+}
+
+h2 {
+    text-align: center;
+
+    font-weight: 600;
+    color      : $white;
+    @include adapt-value(font-size, 20, 14, 0);
+    @include adapt-value(margin-bottom, 24, 15, 0);
+}
+h3{
+    color      : $white;
+
+
+}

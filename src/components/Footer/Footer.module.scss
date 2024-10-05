@@ -1,0 +1,80 @@
+@import '../../generalScss/variables.scss';
+@import '../../generalScss/mixins.scss';
+
+
+
+.footer {
+
+    &__body {
+        background-color: $darkBg;
+        border-radius   : 6px;
+        @include adapt-value(padding, 24, 12, 1);
+    }
+
+    &__items {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+}
+
+
+
+
+
+.item {
+    &__body {}
+
+    &__develop {
+        @include adapt-value(font-size, 14, 10, 1);
+        font-weight: 500;
+        line-height: 1.22;
+
+
+        color: $grayText;
+
+        span {
+            color: $violetDark;
+
+
+        }
+    }
+
+    &__icons {
+        display        : flex;
+        gap            : 16px;
+        align-items    : center;
+        justify-content: flex-end;
+    }
+
+
+}
+
+.icon {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    cursor         : pointer;
+
+    i {
+        transition: 0.15s color linear;
+        font-size  : 25px; ///width+height
+        line-height: 0;
+        color      : $grayText;
+
+        @media (hover:hover) {
+            &:hover {
+                color: $violetDark;
+
+            }
+        }
+        @media (hover:none) {
+            &:active {
+                color: $violetDark;
+
+            }
+        }
+
+        svg {}
+    }
+}

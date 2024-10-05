@@ -1,0 +1,68 @@
+@import '../../generalScss/variables.scss';
+@import '../../generalScss/mixins.scss';
+
+.assortment {
+ 
+    @include adapt-value(padding-bottom, 23, 15, 0);
+    @include adapt-value(padding-left, 22, 10, 0);
+    @include adapt-value(padding-right, 22, 10, 0);
+
+    @include adapt-value(padding-top, 25, 15, 0);
+
+    &__container {}
+
+    &__body {}
+
+    &__title {
+        
+
+    }
+
+    &__products {
+
+        @media (min-width:376px) {
+
+            display  : flex;
+            flex-wrap: wrap;
+            
+            @include adapt-value(margin-left, -10, -5, 0);
+            @include adapt-value(margin-right, -10, -5, 0);
+
+        }
+
+
+
+        &>div {
+            overflow: hidden;
+            @include adapt-value(margin-bottom, 24, 15, 0);
+
+            @media (min-width:376px) {
+                @include adapt-value(padding-left, 10, 5, 0);
+                @include adapt-value(padding-right, 10, 5, 0);
+                
+
+            }
+
+            @media (min-width:376px) and (max-width:575px) {
+                flex: 0 0 50.0%;
+            }
+            @media (min-width:576px) and (max-width:767px) {
+                flex: 0 0 33.33%;
+            }
+            @media (min-width:768px) and (max-width:1199px) {
+                flex: 0 0 25%;
+
+            }
+            @media (min-width:1200px) {flex: 0 0 20%;}
+
+        }
+    }
+
+    &__button {
+        text-align: center;
+    }
+}
+
+
+
+.title {}

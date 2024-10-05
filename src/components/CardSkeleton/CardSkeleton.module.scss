@@ -1,0 +1,45 @@
+@import '../../generalScss/variables.scss';
+
+.block {
+
+
+
+
+
+    &>div {}
+
+    &__body {
+
+        display         : flex;
+        flex-direction  : column;
+        background-color:  $backgroundForCards;
+        border-radius: 6px;
+        overflow: hidden;
+        
+    }
+
+    &__text {
+        &>div:nth-child(1) {
+            margin-bottom: 10px;
+        }
+        &>div:nth-child(2) {
+            margin-bottom: 30px;
+        }
+        display       : flex;
+        flex-direction: column;
+        padding       : 10px 15px;
+    }
+}
+
+.footer {
+
+
+
+    display        : flex;
+    justify-content: space-between;
+
+    &>div {
+
+        flex: 0 0 40%;
+    }
+}

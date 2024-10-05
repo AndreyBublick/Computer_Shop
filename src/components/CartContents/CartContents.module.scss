@@ -1,0 +1,99 @@
+@import './../../generalScss/mixins.scss';
+@import './../../generalScss/variables.scss';
+
+.cart_contents {
+    @include adapt-value('padding-left', 32, 16, 1);
+    @include adapt-value('padding-right', 32, 16, 1);
+    @include adapt-value('padding-top', 24, 12, 1);
+    @include adapt-value('padding-bottom', 24, 12, 1);
+    height        : 100%;
+    display       : flex;
+    flex-direction: column;
+
+    &__body {
+        flex          : 1 1 100%;
+        display       : flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        text-align: left;
+
+        h2 {
+            text-align : left;
+            line-height: 1.22;
+            @include adapt-value(margin-bottom, 16, 12, 0);
+
+        }
+    }
+
+
+    &__content {
+        position: relative;
+        flex: 1 1 100%;
+    }
+
+
+
+
+    &__footer {}
+
+}
+
+
+
+.items {
+    display       : flex;
+    flex-direction: column;
+    
+    overflow-y    : auto;
+    max-height    : 320px;
+    gap           : 8px;
+    @include adapt-value(margin-bottom, 24, 12, 1);
+
+
+
+}
+
+.footer {
+    &__body {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : end;
+    }
+
+    &__total_price {
+        display       : flex;
+        font-size     : 20px;
+        font-weight   : 600;
+        line-height   : 24.38px;
+        text-align    : left;
+        text-transform: uppercase;
+
+        p {
+
+            color        : $subTitleGray;
+            padding-right: 5px;
+
+        }
+
+        span {
+
+            color: $white;
+
+        }
+    }
+
+    &__button {}
+}
+
+.not_carts {
+    @include adapt-value(font-size, 25, 14, 1);
+
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    transform: translate(-50%, -50%);
+
+    color: $white;
+}

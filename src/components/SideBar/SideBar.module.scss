@@ -1,0 +1,102 @@
+@import '../../generalScss/variables.scss';
+@import '../../generalScss/mixins.scss';
+
+
+.sidebar {
+
+    @include adapt-value(min-height, 423, 250, 1);
+
+    @media (max-width:767px) {
+        display: none;
+    }
+
+    color : $grayText;
+
+    background-color : $darkBg;
+
+    /* background-color: #202020; */
+
+
+    &__body {
+        padding       : 20px;
+        display       : flex;
+        flex-direction: column;
+        height        : 100%;
+        font-size     : 15px;
+
+    }
+
+    &__title {
+        font-size     : 18px;
+        color         : $white;
+        text-transform: uppercase;
+        font-weight   : 700;
+        margin-bottom : 30px;
+    }
+
+    &__footer {
+        cursor     : pointer;
+        font-weight: 500;
+
+        @media (min-width:1050px) {
+            display        : flex;
+            justify-content: space-between;
+
+        }
+
+        @media (max-width:1049px) {
+            text-align: end;
+        }
+    }
+
+    nav {
+        /* min-width : 350px; */
+        flex: 1 1 100%;
+
+        li {
+
+
+            a._active {
+                color: $violetDark;
+            }
+
+            margin-bottom: 10px;
+
+            a {
+                cursor     : pointer;
+                color      : inherit;
+                font-weight: 500;
+
+                @media (hover:hover) {
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                @media (hover:none) {
+                    &:active {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        margin-bottom: 30px;
+
+    }
+
+    &__help {
+        @media (max-width:1049px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__term {
+
+        text-decoration: double;
+    }
+}
+
+.sidebar__title+div {
+    flex-grow: 1;
+}

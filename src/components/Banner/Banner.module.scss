@@ -1,0 +1,263 @@
+@import './../../generalScss/mixins.scss';
+@import './../../generalScss/variables.scss';
+
+
+
+.banner {
+    @media (min-width:576px) {
+        border-radius: 0px;
+
+    }
+
+
+
+    &__body {}
+
+    &__items {
+        @media (min-width:576px) {
+            display: flex;
+
+        }
+    }
+
+    &__item {
+        @media (min-width:576px) {
+            flex: 0 0 50%;
+
+
+        }
+    }
+
+    &__item_text_content {
+        position  : relative;
+        transition: transform 2.3s ease-in-out;
+        z-index   : 1;
+
+        @media (min-width:1201px) {
+            display: flex;
+
+            @include adapt-value(padding-left, 110, 80, 0);
+            @include adapt-value(padding-right, 20, 20, 0);
+
+
+
+        }
+
+        @include adapt-value(padding-top, 74, 20, 0);
+        @include adapt-value(padding-bottom, 74, 20, 0);
+
+
+        & .text_content {
+            position  : relative;
+            z-index   : 2;
+            text-align: center;
+        }
+
+        h4 {
+
+            color: $violetDark;
+            @include adapt-value(font-size, 70, calc(70 * 0.5), 1);
+
+            font-weight: 300;
+            line-height: 1.25;
+
+            span {
+                @include adapt-value(font-size, 150, calc(150 * 0.5), 1);
+
+                font-weight: 300;
+                line-height: 1.25;
+
+            }
+
+            @include adapt-value(margin-bottom, 25, calc(25 * 0.3), 1);
+
+        }
+
+        &::before,
+        &::after {
+            content   : '';
+            transition: transform 0.3s ease-in-out 0.4s, opacity 0.3s ease-in-out 0.4s;
+
+            opacity : 0;
+            width   : 100%;
+            height  : 100%;
+            position: absolute;
+            z-index : 1;
+        }
+
+        &::before {
+            top      : 0;
+            transform: translate(-100%, 0%) scale(0.1);
+
+            @include adapt-value(left, -45, -14, 0);
+
+            background       : url('../../images/shoe.png');
+            background-repeat: no-repeat;
+
+            @media (min-width:1200px) {
+                background-size    : auto;
+                background-position: 0% 83%;
+            }
+
+            @media (min-width:768px) and (max-width:1199px) {
+                background-size    : 50%;
+                background-position: 0% 80%;
+
+            }
+
+            @media (min-width:768px) and (max-width:850px) {
+                background-position: 0% 95%;
+
+            }
+
+            @media (max-width:767px) {
+                background-position: 0% 100%;
+            }
+
+            @media (min-width:620px) and (max-width:767px) {
+                background-size: 40%;
+
+            }
+
+            @media (min-width:576px) and (max-width:619px) {
+                background-size: 36%;
+
+            }
+
+            @media (max-width:575px) {
+                @include adapt-value(top, 20, calc(20 * 1.1), 1);
+            }
+
+            @media (min-width:376px) and (max-width:575px) {
+
+                background-size: 38%;
+                /* left        : -5px;  */
+            }
+
+            @media (max-width:375px) {
+                background-position: 0% 90%;
+                background-size    : 30%;
+                /* left            : -5px;  */
+            }
+        }
+
+        &::after {
+            transform: translate(0%, 40%) scale(0.1);
+
+            bottom: -45px;
+
+            right            : -45px;
+            background       : url('../../images/deck.png');
+            background-repeat: no-repeat;
+
+
+            @media (min-width:768px) {
+                background-size: clamp(60%, 5em, 30%);
+
+                background-position: 100% 100%;
+            }
+
+            @media (max-width:767px) {
+                right: -25px;
+
+                @include adapt-value(bottom, -30, -15, 1);
+                background-size: 40%;
+
+                background-position: 100% 100%;
+            }
+
+            @media (min-width:576px) and (max-width:767px) {
+                background-size    : 45%;
+                right              : -45px;
+                background-position: 100% 100%;
+            }
+
+            @media (max-width:575px) {
+                right: -14px;
+            }
+
+            @media (min-width:376px) and (max-width:575px) {
+                background-size: 33%;
+
+            }
+
+            @media (max-width:375px) {
+                /*                  background-position: 0% 90%;  */
+                background-size: 30%;
+                /* left        : -5px;  */
+            }
+        }
+
+
+        &._active::before {
+            opacity: 1;
+
+            transform: translate(0%, 0%) scale(1);
+
+        }
+
+        &._active::after {
+            opacity: 1;
+
+            transform: translate(0%, 0%) scale(1);
+
+        }
+
+
+    }
+
+    &__item_picture {
+        &._active {
+            img {
+                transform: scale(1);
+            }
+        }
+    }
+
+    &__picture {
+        @media (max-width:575px) {
+            display: none;
+        }
+
+    }
+
+    &__sale {
+        position   : absolute;
+        bottom     : 4%;
+        left       : 50%;
+        transform  : translate(-50%, 0);
+        @include adapt-value(font-size,20,14,0);
+        font-weight: 500;
+        line-height: 1.22;
+
+
+        span {
+color: $violetDark;           
+            font-weight: 700;
+            line-height: inherit;
+
+        }
+
+    }
+
+    &__picture_body {
+        position      : relative;
+        padding-bottom: 100%;
+        padding-left  : 100%;
+        overflow      : hidden;
+
+        img {
+            transition: 0.3s transform 0.5s linear;
+            transform : scale(1.7);
+
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+
+}

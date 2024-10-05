@@ -1,0 +1,53 @@
+$paddingLeftAndRight:15;
+$maxWidthMaket      : 1920;
+$maxWidthContainer  : 1274;
+
+
+$maxWidthMaket2k : 2000;
+
+/* $maxWidthContainer2k: 1750; */
+
+
+
+@mixin adapt-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    /*      $maxWidthMaket    : 1440;
+    $maxWidthContainer: 1175;
+ */
+    @if $type==1 {
+        #{$property}:#{$startSize + px};
+
+        @media (max-width:#{$maxWidthContainer + px}) {
+            #{$property}:calc(#{$minSize + px} + (#{$addSize} * ((100vw - 280px) / #{$maxWidthContainer - 280})));
+        }
+    }
+
+    @else if $type==2 {
+        #{$property}:#{$startSize + px};
+
+        @media (min-width:#{$maxWidthContainer + px}) {
+            #{$property}:calc(#{$minSize + px} + (#{$addSize} * ((100vw - 280px) / #{$maxWidthMaket - 280})));
+        }
+    }
+
+    @else {
+        #{$property}:calc(#{$minSize + px} + (#{$addSize} * ((100vw - 280px) / #{$maxWidthMaket - 280})));
+
+    }
+}
+
+@mixin calc-container($indentation) {
+
+max-width: calc((#{$maxWidthContainer + px} + /* (#{$paddingLeftAndRight + px} * 2)) */ (#{$indentation + px} * 2)));
+padding-left:#{$indentation + px};
+padding-right:#{$indentation + px};
+}
+
+@mixin calc-container2k($indentation) {
+
+    max-width: calc((#{$maxWidthMaket2k + px} + (#{$paddingLeftAndRight + px} * 2)) - (#{$indentation + px} * 2));
+}
+
+
+
