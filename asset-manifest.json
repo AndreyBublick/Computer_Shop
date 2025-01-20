@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Computer_Shop/static/css/main.306fc01d.css",
+    "main.js": "/Computer_Shop/static/js/main.03d41602.js",
+    "static/media/deck.png": "/Computer_Shop/static/media/deck.b4490e7ccfd0dff0fc04.png",
+    "static/media/grandFather.png": "/Computer_Shop/static/media/grandFather.cd6f7428d885cd4aca78.png",
+    "static/media/computer.png": "/Computer_Shop/static/media/computer.5e56530d0ea3793fd73d.png",
+    "static/media/shoe.png": "/Computer_Shop/static/media/shoe.a8659b4d2e056c42ba95.png",
+    "static/media/avatar.jpg": "/Computer_Shop/static/media/avatar.4bc3b938691acbda7100.jpg",
+    "static/media/logo.svg": "/Computer_Shop/static/media/logo.d519e424ce28aa8d02062bd19b5f8f8d.svg",
+    "index.html": "/Computer_Shop/index.html",
+    "main.306fc01d.css.map": "/Computer_Shop/static/css/main.306fc01d.css.map",
+    "main.03d41602.js.map": "/Computer_Shop/static/js/main.03d41602.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.306fc01d.css",
+    "static/js/main.03d41602.js"
+  ]
+}
